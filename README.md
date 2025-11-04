@@ -1,96 +1,162 @@
-- Blade (this project) version: **[github.com/nunomaduro/laravel-starter-kit](https://github.com/nunomaduro/laravel-starter-kit)**
-- Inertia & React version: **[github.com/nunomaduro/laravel-starter-kit-inertia-react](https://github.com/nunomaduro/laravel-starter-kit-inertia-react)**
+# Laravel Starter Kit
 
+A super cool Laravel 12 starter kit coming from [@nunomaduro](https://github.com/nunomaduro/laravel-starter-kit), modified to my needs.
 
-<p align="center">
-    <a href="https://youtu.be/VhzP0XWGTC4" target="_blank">
-        <img src="/art/banner.png" alt="Overview Laravel Starter Kit" style="width:70%;">
-    </a>
-</p>
+## Features
 
-<p>
-    <a href="https://github.com/nunomaduro/laravel-starter-kit/actions"><img src="https://github.com/nunomaduro/laravel-starter-kit/actions/workflows/tests.yml/badge.svg" alt="Build Status"></a>
-    <a href="https://packagist.org/packages/nunomaduro/laravel-starter-kit"><img src="https://img.shields.io/packagist/dt/nunomaduro/laravel-starter-kit" alt="Total Downloads"></a>
-    <a href="https://packagist.org/packages/nunomaduro/laravel-starter-kit"><img src="https://img.shields.io/packagist/v/nunomaduro/laravel-starter-kit" alt="Latest Stable Version"></a>
-    <a href="https://packagist.org/packages/nunomaduro/laravel-starter-kit"><img src="https://img.shields.io/packagist/l/nunomaduro/laravel-starter-kit" alt="License"></a>
-</p>
+- **Laravel 12** - Latest Laravel framework with streamlined structure
+- **PHP 8.4** - Modern PHP features and performance
+- **Tailwind CSS 4** - Latest Tailwind with Vite integration
+- **Pest 4** - Advanced testing with browser testing support
+- **Code Quality Tools** - PHPStan, Laravel Pint, Rector, Prettier
+- **Development Workflow** - Concurrent dev server, queue, logs, and Vite
 
-**Laravel Starter Kit** is an ultra-strict, type-safe [Laravel](https://laravel.com) skeleton engineered for developers who refuse to compromise on code quality. This opinionated starter kit enforces rigorous development standards through meticulous tooling configuration and architectural decisions that prioritize type safety, immutability, and fail-fast principles.
+## Requirements
 
-## Why This Starter Kit?
+- PHP >= 8.4.0
+- Composer
+- Node.js & NPM
+- MySQL (or your preferred database)
 
-Modern PHP has evolved into a mature, type-safe language, yet many Laravel projects still operate with loose conventions and optional typing. This starter kit changes that paradigm by enforcing:
+## Quick Start
 
-- **100% Type Coverage**: Every method, property, and parameter is explicitly typed
-- **Zero Tolerance for Code Smells**: Rector and PHPStan at maximum strictness catch issues before they become bugs
-- **Immutable-First Architecture**: Data structures favor immutability to prevent unexpected mutations
-- **Fail-Fast Philosophy**: Errors are caught at compile-time, not runtime
-- **Automated Code Quality**: Pre-configured tools ensure consistent, pristine code across your entire team
-- **Just Better Laravel Defaults**: Thanks to **[Essentials](https://github.com/nunomaduro/essentials)** / strict models, auto eager loading, immutable dates, and more...
+### Installation
 
-This isn't just another Laravel boilerplate—it's a statement that PHP applications can and should be built with the same rigor as strongly-typed languages like Rust or TypeScript.
-
-## Getting Started
-
-> **Requires [PHP 8.4+](https://php.net/releases/)**.
-
-Create your type-safe Laravel application using [Composer](https://getcomposer.org):
+Run the automated setup script:
 
 ```bash
-composer create-project nunomaduro/laravel-starter-kit --prefer-dist example-app
-```
-
-### Initial Setup
-
-Navigate to your project and complete the setup:
-
-```bash
-cd example-app
-
-# Setup project
 composer setup
-
-# Start the development server
-composer dev
 ```
 
-### Optional: Browser Testing Setup
+This command will:
+1. Install PHP dependencies via Composer
+2. Create `.env` file from `.env.example` (if not exists)
+3. Create `.env.production` file from `.env.example` (if not exists)
+4. Generate application key
+5. Run database migrations
+6. Install NPM dependencies
+7. Build frontend assets
 
-If you plan to use Pest's browser testing capabilities:
+### Additional Setup
+
+#### Environment Configuration
+
+After running `composer setup`, configure your `.env` file with your database credentials:
+
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=your_database_name
+DB_USERNAME=your_username
+DB_PASSWORD=your_password
+```
+
+#### Browser Testing Setup (Optional)
+
+If you plan to use Pest's browser testing capabilities, install Playwright:
 
 ```bash
 npm install playwright
 npx playwright install
 ```
 
-### Verify Installation
+This installs the necessary browser binaries for running browser tests.
 
-Run the test suite to ensure everything is configured correctly:
+#### Production Environment
+
+The setup script automatically creates a `.env.production` file. Configure it with production-specific settings:
+
+```bash
+# Edit .env.production with your production settings
+```
+
+Configure production environment variables:
+- Set `APP_ENV=production`
+- Set `APP_DEBUG=false`
+- Configure production database credentials
+- Set secure `APP_KEY` (generated during setup)
+- Configure mail, cache, queue, and session drivers
+- Set proper logging channels
+
+## Development
+
+### Running the Development Server
+
+Start all development services concurrently:
+
+```bash
+composer dev
+```
+
+This starts:
+- Laravel development server (port 8000)
+- Queue listener
+- Log viewer (Pail)
+- Vite dev server (Hot Module Replacement)
+
+## Code Quality
+
+### Linting & Formatting
+
+Fix code style issues:
+
+```bash
+composer lint
+```
+
+This runs:
+- Rector (PHP refactoring)
+- Laravel Pint (PHP formatting)
+- Prettier (frontend formatting)
+
+### Testing
+
+Run the full test suite:
 
 ```bash
 composer test
 ```
 
-You should see 100% test coverage and all quality checks passing.
+This includes:
+- Type coverage (100% minimum)
+- Unit and feature tests (Pest)
+- Code style validation
+- Static analysis (PHPStan)
 
-## Available Tooling
+### Browser Testing
 
-### Development
-- `composer dev` - Starts Laravel server, queue worker, log monitoring, and Vite dev server concurrently
+This starter kit includes Pest 4 with browser testing capabilities. Create browser tests in `tests/Browser/`:
 
-### Code Quality
-- `composer lint` - Runs Rector (refactoring), Pint (PHP formatting), and Prettier (JS/TS formatting)
-- `composer test:lint` - Dry-run mode for CI/CD pipelines
+```php
+it('displays the welcome page', function () {
+    $page = visit('/');
+    
+    $page->assertSee('Laravel')
+        ->assertNoJavascriptErrors();
+});
+```
+## Available Scripts
 
-### Testing
-- `composer test:type-coverage` - Ensures 100% type coverage with Pest
-- `composer test:types` - Runs PHPStan at level 9 (maximum strictness)
-- `composer test:unit` - Runs Pest tests with 100% code coverage requirement
-- `composer test` - Runs the complete test suite (type coverage, unit tests, linting, static analysis)
+### Composer Scripts
 
-### Maintenance
-- `composer update:requirements` - Updates all PHP and NPM dependencies to latest versions
+- `composer setup` - Initial project setup
+- `composer dev` - Run all development services
+- `composer lint` - Fix code style issues
+- `composer test` - Run full test suite
+- `composer test:unit` - Run Pest tests only
+- `composer test:types` - Run PHPStan analysis
+- `composer test:type-coverage` - Check type coverage
+- `composer test:lint` - Validate code style
+- `composer update:requirements` - Update all dependencies
+
+### NPM Scripts
+
+- `npm run dev` - Start Vite dev server
+- `npm run build` - Build for production
+- `npm run lint` - Format frontend code
+- `npm run test:lint` - Check frontend code style
 
 ## License
 
-**Laravel Starter Kit** was created by **[Nuno Maduro](https://x.com/enunomaduro)** under the **[MIT license](https://opensource.org/licenses/MIT)**.
+This project is open-sourced software licensed under the [MIT license](LICENSE).

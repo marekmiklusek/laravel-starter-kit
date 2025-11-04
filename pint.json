@@ -51,6 +51,9 @@
             ],
             "sort_algorithm": "none"
         },
+        "ordered_imports": {
+            "sort_algorithm": "length"
+        },
         "ordered_interfaces": true,
         "ordered_traits": true,
         "protected_to_private": true,
