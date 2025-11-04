@@ -1,6 +1,6 @@
 # 🚀 Laravel Starter Kit
 
-A super cool Laravel 12 starter kit coming from [@nunomaduro](https://github.com/nunomaduro/laravel-starter-kit), modified to my needs. ✨
+A super cool Laravel 12 starter kit coming from [@nunomaduro](https://github.com/nunomaduro/laravel-starter-kit), with some modifications. ✨
 
 ## ✨ Features
 
