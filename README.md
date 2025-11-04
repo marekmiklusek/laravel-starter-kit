@@ -156,7 +156,3 @@ it('displays the welcome page', function () {
 - `npm run build` - Build for production
 - `npm run lint` - Format frontend code
 - `npm run test:lint` - Check frontend code style
-
-## License
-
-This project is open-sourced software licensed under the [MIT license](LICENSE).
