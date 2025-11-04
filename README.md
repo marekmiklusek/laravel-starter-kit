@@ -1,26 +1,26 @@
-# Laravel Starter Kit
+# 🚀 Laravel Starter Kit
 
-A super cool Laravel 12 starter kit coming from [@nunomaduro](https://github.com/nunomaduro/laravel-starter-kit), modified to my needs.
+A super cool Laravel 12 starter kit coming from [@nunomaduro](https://github.com/nunomaduro/laravel-starter-kit), modified to my needs. ✨
 
-## Features
+## ✨ Features
 
-- **Laravel 12** - Latest Laravel framework with streamlined structure
-- **PHP 8.4** - Modern PHP features and performance
-- **Tailwind CSS 4** - Latest Tailwind with Vite integration
-- **Pest 4** - Advanced testing with browser testing support
-- **Code Quality Tools** - PHPStan, Laravel Pint, Rector, Prettier
-- **Development Workflow** - Concurrent dev server, queue, logs, and Vite
+- **Laravel 12** 🔥 - Latest Laravel framework with streamlined structure
+- **PHP 8.4** ⚡ - Modern PHP features and performance
+- **Tailwind CSS 4** 🎨 - Latest Tailwind with Vite integration
+- **Pest 4** 🧪 - Advanced testing with browser testing support
+- **Code Quality Tools** 🛠️ - PHPStan, Laravel Pint, Rector, Prettier
+- **Development Workflow** 🔄 - Concurrent dev server, queue, logs, and Vite
 
-## Requirements
+## 📋 Requirements
 
 - PHP >= 8.4.0
 - Composer
 - Node.js & NPM
 - MySQL (or your preferred database)
 
-## Quick Start
+## 🚀 Quick Start
 
-### Installation
+### 📦 Installation
 
 Run the automated setup script:
 
@@ -37,9 +37,9 @@ This command will:
 6. Install NPM dependencies
 7. Build frontend assets
 
-### Additional Setup
+### ⚙️ Additional Setup
 
-#### Environment Configuration
+#### 🔧 Environment Configuration
 
 After running `composer setup`, configure your `.env` file with your database credentials:
 
@@ -52,7 +52,7 @@ DB_USERNAME=your_username
 DB_PASSWORD=your_password
 ```
 
-#### Browser Testing Setup (Optional)
+#### 🌐 Browser Testing Setup (Optional)
 
 If you plan to use Pest's browser testing capabilities, install Playwright:
 
@@ -63,7 +63,7 @@ npx playwright install
 
 This installs the necessary browser binaries for running browser tests.
 
-#### Production Environment
+#### 🚀 Production Environment
 
 The setup script automatically creates a `.env.production` file. Configure it with production-specific settings:
 
@@ -79,9 +79,9 @@ Configure production environment variables:
 - Configure mail, cache, queue, and session drivers
 - Set proper logging channels
 
-## Development
+## 💻 Development
 
-### Running the Development Server
+### 🖥️ Running the Development Server
 
 Start all development services concurrently:
 
@@ -95,9 +95,9 @@ This starts:
 - Log viewer (Pail)
 - Vite dev server (Hot Module Replacement)
 
-## Code Quality
+## 🔍 Code Quality
 
-### Linting & Formatting
+### 🧹 Linting & Formatting
 
 Fix code style issues:
 
@@ -110,7 +110,7 @@ This runs:
 - Laravel Pint (PHP formatting)
 - Prettier (frontend formatting)
 
-### Testing
+### 🧪 Testing
 
 Run the full test suite:
 
@@ -124,7 +124,7 @@ This includes:
 - Code style validation
 - Static analysis (PHPStan)
 
-### Browser Testing
+### 🌐 Browser Testing
 
 This starter kit includes Pest 4 with browser testing capabilities. Create browser tests in `tests/Browser/`:
 
@@ -136,9 +136,9 @@ it('displays the welcome page', function () {
         ->assertNoJavascriptErrors();
 });
 ```
-## Available Scripts
+## 📜 Available Scripts
 
-### Composer Scripts
+### 🎼 Composer Scripts
 
 - `composer setup` - Initial project setup
 - `composer dev` - Run all development services
@@ -150,7 +150,7 @@ it('displays the welcome page', function () {
 - `composer test:lint` - Validate code style
 - `composer update:requirements` - Update all dependencies
 
-### NPM Scripts
+### 📦 NPM Scripts
 
 - `npm run dev` - Start Vite dev server
 - `npm run build` - Build for production
