@@ -1,8 +1,8 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "nunomaduro/laravel-starter-kit",
+    "name": "marekmiklusek/laravel-starter-kit",
     "type": "project",
-    "description": "The skeleton application for the Laravel framework.",
+    "description": "A type-safe Laravel starter kit for developers who value code quality.",
     "keywords": [
         "laravel",
         "framework"

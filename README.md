@@ -22,6 +22,12 @@ A super cool Laravel 12 starter kit coming from [@nunomaduro](https://github.com
 
 ### 📦 Installation
 
+Create a new Laravel project:
+
+```bash
+composer create-project marekmiklusek/laravel-starter-kit --prefer-dist app-name
+```
+
 Run the automated setup script:
 
 ```bash
