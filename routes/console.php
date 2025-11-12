@@ -4,6 +4,6 @@ declare(strict_types=1);
 
 use Illuminate\Support\Facades\Artisan;
 
-Artisan::command('test', function () {
+Artisan::command('test', function (): void {
     //
 });
