@@ -20,7 +20,7 @@ A super cool Laravel 12 starter kit coming from [@nunomaduro](https://github.com
 
 ## 🚀 Quick Start
 
-> [!NOTICE]
+> [!NOTE]
 > In `config/database.php`, `'engine' => 'InnoDB',` is used as the default for both `mysql` and `mariadb` connections.
 
 ### 📦 Installation
