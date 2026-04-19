@@ -28,6 +28,6 @@
   - `config()->integer('key')` for integer values
   - `config()->array('key')` for array values
 
-#### Migration Defaults
+#### Migration Defaults 
 - **No Default Values in Migrations:** Never define default column values (e.g., `->default(0)`) in migration files.
 - **Requirement:** Define all default values in application code (model casts, constructors, Action classes, etc.).
