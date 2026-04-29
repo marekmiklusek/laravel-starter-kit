@@ -136,18 +136,6 @@ This includes:
 - Code style validation
 - Static analysis (PHPStan)
 
-### 🌐 Browser Testing
-
-This starter kit includes Pest 4 with browser testing capabilities. Create browser tests in `tests/Browser/`:
-
-```php
-it('displays the welcome page', function () {
-    $page = visit('/');
-    
-    $page->assertSee('Laravel')
-        ->assertNoJavascriptErrors();
-});
-```
 ## 📜 Available Scripts
 
 ### 🎼 Composer Scripts
