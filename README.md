@@ -131,6 +131,7 @@ composer test
 
 This includes:
 - Type coverage (100% minimum)
+- Code coverage (100% required)
 - Unit and feature tests (Pest)
 - Code style validation
 - Static analysis (PHPStan)
