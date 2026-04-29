@@ -23,6 +23,9 @@ A super cool Laravel 12 starter kit coming from [@nunomaduro](https://github.com
 > [!NOTE]
 > In `config/database.php`, `'engine' => 'InnoDB',` is used as the default for both `mysql` and `mariadb` connections.
 
+> [!NOTE]
+> In `config/essentials.php`, models are unguarded by default via `Unguard::class => true`.
+
 ### 📦 Installation
 
 Create a new Laravel project:

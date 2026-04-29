@@ -9,11 +9,12 @@ use Database\Factories\UserFactory;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Attributes\Hidden;
+use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 /**
- * @property-read int $id
+ * @property-read string $id
  * @property-read string $name
  * @property-read string $email
  * @property-read CarbonInterface|null $email_verified_at
@@ -31,6 +32,7 @@ final class User extends Authenticatable implements MustVerifyEmail
     /** @use HasFactory<UserFactory> */
     use HasFactory;
 
+    use HasUuids;
     use Notifiable;
 
     /**
@@ -39,7 +41,7 @@ final class User extends Authenticatable implements MustVerifyEmail
     public function casts(): array
     {
         return [
-            'id' => 'integer',
+            'id' => 'string',
             'name' => 'string',
             'email' => 'string',
             'email_verified_at' => 'datetime',
